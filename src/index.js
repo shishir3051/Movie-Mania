@@ -1,7 +1,10 @@
 import { getMovieReviewData } from "./data.js";
 
+let sortDesc = false;
 function init() {
     const movieReviewData = getMovieReviewData();
+
+    registerHandlers(movieReviewData);
 
     paintStatistics(movieReviewData);
     paintMovieData(movieReviewData);
@@ -11,8 +14,6 @@ function paintStatistics(movieReviewData) {
     const flatReviewData = movieReviewData.flat();
 
     const totalMovies = movieReviewData.length;
-    
-
 
     const totalReviews = flatReviewData.length;
 
@@ -39,10 +40,35 @@ function addStat(elem, value) {
 
 function paintMovieData(movieReviewData) {
     const flatReviewData = movieReviewData.flat();
+
+    const sorted = flatReviewData.toSorted((a, b) => b.on - a.on);
     const movieListEL = document.querySelector("#movieListId UL");
     movieListEL.classList.add("reviews");
 
-    flatReviewData.map((movie) => {
+    addMovieReviewData(movieListEL, sorted);
+}
+
+function registerHandlers(movieReviewData) {
+    const sortBtn = document.getElementById("srtBtnId");
+
+    sortBtn.addEventListener("click", () => sortByReview(movieReviewData));
+}
+
+function sortByReview(movieReviewData) {
+    sortDesc = !sortDesc;
+    const flatReviewData = movieReviewData.flat();
+    const movieListEL = document.querySelector("#movieListId UL");
+
+    let sortReviewData = sortDesc
+        ? flatReviewData.toSorted((a, b) => b.rating - a.rating)
+        : flatReviewData.toSorted((a, b) => a.rating - b.rating);
+
+    removeAllChildNodes(movieListEL);
+    addMovieReviewData(movieListEL, sortReviewData);
+}
+
+function addMovieReviewData(movieListEL, movieReview) {
+    movieReview.map((movie) => {
         const liElem = document.createElement("li");
         liElem.classList.add("reviews-card");
 
@@ -74,5 +100,11 @@ function paintMovieData(movieReviewData) {
 
         movieListEL.appendChild(liElem);
     });
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
 init();

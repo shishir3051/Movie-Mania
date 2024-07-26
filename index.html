@@ -11,7 +11,7 @@
             href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Poppins:wght@200;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
         />
-         <script type="module" src="./src/index.js"></script>
+        <script type="module" src="./src/index.js"></script>
     </head>
     <body>
         <div class="header">
@@ -27,11 +27,16 @@
         </div>
 
         <div class="main-container" id="movieListId">
-            <h1>Movie Reviews</h1>
+            <div class="flex">
+                <h1>Movie Reviews</h1>
+                <span class="divider"> | </span>
+                <button id="srtBtnId">Sort By Ratting</button>
+                <span class="divider"> | </span>
+                <button id="grpBtnId">Group</button>
 
-            <ul class="reviews">
-                   
-            </ul>
+            </div>
+
+            <ul class="reviews"></ul>
         </div>
     </body>
 </html>
