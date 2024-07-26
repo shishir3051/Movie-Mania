@@ -11,6 +11,8 @@ function paintStatistics(movieReviewData) {
     const flatReviewData = movieReviewData.flat();
 
     const totalMovies = movieReviewData.length;
+    
+
 
     const totalReviews = flatReviewData.length;
 
