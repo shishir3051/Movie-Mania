@@ -15,7 +15,7 @@ body {
 }
 
 .header .nav {
-    background: #8C3061;
+    background: #8c3061;
     /* display: block; */
     width: 92%;
     margin: 0 auto;
@@ -61,7 +61,7 @@ body {
 }
 .flex {
     display: flex;
-    background: #8C3061;
+    background: #8c3061;
     margin-bottom: 20px;
     justify-items: center;
     max-width: 100%;
@@ -84,11 +84,21 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
-    background: #8C3061;
+    background: #8c3061;
     border: none;
     cursor: pointer;
     font-family: monospace;
     /* font-weight: 900; */
+}
+
+@media (max-width: 500px) {
+    .flex h1 {
+        margin-top: 6px;
+        font-size: 1em;
+    }
+    .flex button {
+        font-size: 1em;
+    }
 }
 .reviews {
     display: flex;
@@ -100,7 +110,7 @@ body {
 }
 
 .reviews-card {
-    background: #40534C;
+    background: #40534c;
     flex-basis: 46%;
     padding: 15px;
     width: 100%;
@@ -114,5 +124,3 @@ body {
 ul {
     list-style: none;
 }
-
-
