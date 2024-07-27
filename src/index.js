@@ -50,8 +50,10 @@ function paintMovieData(movieReviewData) {
 
 function registerHandlers(movieReviewData) {
     const sortBtn = document.getElementById("srtBtnId");
+    const grpBtn = document.getElementById("grpBtnId");
 
     sortBtn.addEventListener("click", () => sortByReview(movieReviewData));
+    grpBtn.addEventListener("click", () => groupReviewByTitle(movieReviewData));
 }
 
 function sortByReview(movieReviewData) {
@@ -66,7 +68,69 @@ function sortByReview(movieReviewData) {
     removeAllChildNodes(movieListEL);
     addMovieReviewData(movieListEL, sortReviewData);
 }
+function groupReviewByTitle(movieReviewData) {
+    const flatReviewData = movieReviewData.flat();
+    const groupedReviews = Object.groupBy(flatReviewData, ({ title }) => title);
 
+    const titleKeys = Reflect.ownKeys(groupedReviews);
+
+    const movieListEL = document.querySelector("#movieListId UL");
+    removeAllChildNodes(movieListEL);
+
+    titleKeys.forEach((title) => {
+        const liEL = document.createElement("li");
+        liEL.classList.add("reviews-card");
+
+        const hEl = document.createElement("h2");
+        hEl.style.fontSize = "23px"; // Set font size directly
+        hEl.innerText = title;
+        liEL.appendChild(hEl);
+
+        const reviews = groupedReviews[title];
+
+        reviews.forEach((review) => {
+            const checkMark = "\u2713"; // Unicode for the check mark
+            
+            const pEl = document.createElement("p");
+            pEl.style.margin = "10px 18px";
+            pEl.style.fontSize = "17px";
+            
+            const checkMarkSpan = document.createElement("span");
+            checkMarkSpan.innerText = `${checkMark} `; // Note the space after the check mark
+
+            const spanEl = document.createElement("span");
+            spanEl.style.fontWeight = "700";
+            spanEl.innerText = review.by; // Set the inner text
+
+            const spnRtEl = document.createElement("span");
+            spnRtEl.style.fontWeight = "700";
+            spnRtEl.innerText = review.rating; // Set the inner text
+
+            const itEl = document.createElement("i");
+            itEl.style.fontStyle = "italic";
+            itEl.innerText = review.content; // Set the inner text
+
+            pEl.appendChild(checkMarkSpan);
+            pEl.appendChild(spanEl);
+            pEl.appendChild(document.createTextNode(" has given "));
+            pEl.appendChild(spnRtEl);
+            pEl.appendChild(
+                document.createTextNode(" rating with a comment, ")
+            );
+            pEl.appendChild(itEl);
+
+            liEL.appendChild(pEl);
+
+            /*const message1 = `<strong>${review.by}</strong> has given 
+            <strong>${review.rating}</strong>ratting with a comment, 
+            <i>${review.content}</i>`;
+
+            pEl.appendChild(message1);*/
+        });
+
+        movieListEL.appendChild(liEL);
+    });
+}
 function addMovieReviewData(movieListEL, movieReview) {
     movieReview.map((movie) => {
         const liElem = document.createElement("li");

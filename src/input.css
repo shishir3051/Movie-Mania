@@ -15,11 +15,11 @@ body {
 }
 
 .header .nav {
-    background: #e3a5c7;
+    background: #8C3061;
     /* display: block; */
     width: 92%;
-    margin: auto;
-    padding: 15px;
+    margin: 0 auto;
+    padding: 10px;
     text-align: center;
     /* align-items: center; */
     margin-bottom: 10px;
@@ -31,6 +31,7 @@ body {
 
 .rating-section {
     display: flex;
+    max-width: 100%;
     justify-content: space-around;
 }
 
@@ -43,7 +44,7 @@ body {
     text-align: center;
     display: block;
     height: 150px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -60,20 +61,17 @@ body {
 }
 .flex {
     display: flex;
-    background: #1a3636;
+    background: #8C3061;
     margin-bottom: 20px;
     justify-items: center;
-    max-width: 40%;
+    max-width: 100%;
     font-family: monospace;
     padding: 5px;
-
 }
 .flex h1 {
     text-align: center;
     color: white;
     font-size: 1.5em;
-
-
 }
 .flex .divider {
     margin-bottom: 4px;
@@ -86,27 +84,28 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
-    background: #1a3636;
+    background: #8C3061;
     border: none;
     cursor: pointer;
     font-family: monospace;
     /* font-weight: 900; */
-
 }
 .reviews {
     display: flex;
     justify-content: space-between;
     /* flex-direction: column; */
     flex-wrap: wrap;
+    max-width: 100%;
     padding: 10px;
 }
 
 .reviews-card {
-    background: #e7dbdb;
+    background: #40534C;
     flex-basis: 46%;
-    padding: 10px;
-    width: 60%;
-    height: 150px;
+    padding: 15px;
+    width: 100%;
+    color: white;
+    /* height: 150px; */
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -115,3 +114,5 @@ body {
 ul {
     list-style: none;
 }
+
+

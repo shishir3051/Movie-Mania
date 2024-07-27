@@ -37,6 +37,26 @@ const movieReviewData = [
             on: 1718508775000,
         },
     ],
+    [
+        {
+            id: "664acd311387e2ad2e8be48b",
+            title: "3Idiots",
+            content:
+                "What a Fantastic movie! I love this Movie. I watch this movie more than 50 times. ",
+            rating: 4.5,
+            by: "Rahman Shishir",
+            on: 1718508775000,
+        },
+        {
+            id: "664acd311387e2ad2e8be48b",
+            title: "3Idiots",
+            content:
+                "What a fantastic movie! I've watched this movie many times, and I don't feel bored when I watch it.",
+            rating: 5,
+            by: "HM. Gaziur Rahman",
+            on: 1718508775000,
+        },
+    ],
 ];
 
 export function getMovieReviewData() {
