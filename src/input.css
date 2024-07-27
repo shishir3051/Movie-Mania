@@ -99,10 +99,18 @@ body {
     .flex button {
         font-size: 1em;
     }
+    .reviews-card {
+        font-size: 15px;
+        /* padding: 10px; */
+    }
+    .reviews {
+        /* display: flex; */
+        flex-direction: column;
+    }
 }
 .reviews {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     /* flex-direction: column; */
     flex-wrap: wrap;
     max-width: 100%;
@@ -111,9 +119,10 @@ body {
 
 .reviews-card {
     background: #40534c;
-    flex-basis: 46%;
+    flex-basis: 48%;
     padding: 15px;
     width: 100%;
+    font-size: 19px;
     color: white;
     /* height: 150px; */
     margin-bottom: 15px;

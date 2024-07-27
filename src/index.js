@@ -138,7 +138,7 @@ function addMovieReviewData(movieListEL, movieReview) {
 
         const titleElem = document.createElement("p");
         titleElem.innerText = movie.title;
-        titleElem.style.fontSize = "23px"; // Set font size directly
+        titleElem.style.fontSize = "20px"; // Set font size directly
         titleElem.style.marginBottom = "10px"; // Set margin bottom directly
         titleElem.style.fontWeight = "700"; // Set font weight directly
         titleElem.innerText = `${movie.title} - ${movie.rating}`;
@@ -146,7 +146,7 @@ function addMovieReviewData(movieListEL, movieReview) {
 
         const reviewElem = document.createElement("p");
         reviewElem.innerText = movie.content;
-        reviewElem.style.fontSize = "19px"; // Set font size directly
+        // reviewElem.style.fontSize = "19px"; // Set font size directly
         reviewElem.style.margin = "7px 30px"; // Set margin bottom directly
         reviewElem.style.fontWeight = "500"; // Set font weight directly
         reviewElem.innerText = movie.content;
@@ -154,7 +154,7 @@ function addMovieReviewData(movieListEL, movieReview) {
 
         const byElem = document.createElement("p");
         byElem.innerText = movie.by;
-        byElem.style.fontSize = "16px"; // Set font size directly
+        byElem.style.fontSize = "17px"; // Set font size directly
         byElem.style.margin = "7px 30px"; // Set margin bottom directly
         byElem.style.fontWeight = "600"; // Set font weight directly
         byElem.innerText = `By ${movie.by} on ${new Intl.DateTimeFormat(
